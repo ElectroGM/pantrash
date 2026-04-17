@@ -1,0 +1,156 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.562);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+/* Navegación */
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #afe4ff;
+}
+
+/* Hero */
+.hero {
+  flex: 1;
+  text-align: center;
+  padding: 100px 20px 70px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 670px;
+  margin: 0 auto 30px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+/* Botón */
+.btn {
+  display: inline-block;
+  background: #d3d5d6;
+  color: #000000;
+  padding: 14px 34px;
+  margin-top: 170px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+  box-shadow: 0 8px 20px rgb(58, 63, 65);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #0ea5e9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #cbd5e1;
+  margin-top: 0;
+}
+
+#fraseFooter {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+#fraseFooter.mostrar {
+  opacity: 1;
+}
+
+#fraseFooter.ocultar {
+  opacity: 0;
+}
+
+#fraseFooter.frase-especial {
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+}
+
+#fraseFooter .hora-pc {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+
+#fraseFooter.frase-especial {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* contenedor vertical */
+.frase-especial-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* frase tenue arriba */
+.frase-superior {
+  font-size: 12px;
+  opacity: 0.4;
+  margin-bottom: 4px;
+}
+
+/* línea principal */
+.frase-linea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* hora */
+.hora-pc {
+  font-weight: bold;
+}
+
+/* flecha */
+.flecha-final {
+  font-size: 18px;
+}
