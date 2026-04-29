@@ -5,7 +5,7 @@ const frases = [
   { texto: "Nuestros mejores amigos son los que hacemos en el liceo...", pesoBase: 10, pesoActual: 10 },
 
   { 
-    texto: "Creo que me voy a dormir un rato... 🡣",
+    texto: "frase especial",
     pesoBase: 10,
     pesoActual: 10,
     especial: true
@@ -30,9 +30,7 @@ function elegirFrasePorPeso() {
 
   for (const frase of frases) {
     random -= frase.pesoActual;
-    if (random <= 0) {
-      return frase;
-    }
+    if (random <= 0) return frase;
   }
 
   return frases[frases.length - 1];
@@ -56,11 +54,25 @@ function obtenerHoraActual() {
   });
 }
 
+function obtenerMensajePorHora() {
+  const hora = new Date().getHours();
+
+  if (hora >= 6 && hora < 12) {
+    return "...joder, que temprano que estas despierto...";
+  } else if (hora >= 12 && hora < 18) {
+    return "su cs?";
+  } else if (hora >= 18 && hora < 22) {
+    return "ya se está haciendo tarde...";
+  } else {
+    return "muy tarde bro...";
+  }
+}
+
 function mostrarFrase(frase) {
   if (frase.especial) {
     elementoFooter.innerHTML = `
       <div class="frase-especial-contenedor">
-        <div class="frase-superior">muy tarde bro...</div>
+        <div class="frase-superior">${obtenerMensajePorHora()}</div>
         <div class="frase-linea">
           <span class="hora-pc">${obtenerHoraActual()}</span>
           <span class="flecha-final">🡣</span>
@@ -87,7 +99,6 @@ function cambiarFrase() {
 
     fraseActual = nuevaFrase;
     mostrarFrase(nuevaFrase);
-
     actualizarPesos(nuevaFrase);
 
     elementoFooter.classList.remove("ocultar");
